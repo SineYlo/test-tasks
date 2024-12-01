@@ -15,7 +15,7 @@ function deleteDestinationDirectory() {
 
 function transferFontFiles() {
   return new Promise((resolve) => {
-    src('./src/fonts/**/*.woff2')
+    src('./src/fonts/**/*.woff2', { encoding: false })
       .pipe(rename({
         dirname: './'
       }))
