@@ -1,0 +1,15 @@
+{
+  "main": "gulpfile.js",
+  "scripts": {},
+  "author": "SineYlo",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "6.1.1",
+    "gulp": "5.0.0",
+    "gulp-connect": "5.7.0",
+    "gulp-pug": "5.0.0",
+    "gulp-rename": "2.0.0",
+    "gulp-sass": "6.0.0",
+    "sass": "1.81.0"
+  }
+}
