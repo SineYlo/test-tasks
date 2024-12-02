@@ -1,0 +1,120 @@
+.choices {
+  width: 300px;
+  margin-bottom: 0;
+
+  &[data-type*=select-one] {
+    &:has(.dropdown--size_small) {
+      & .choices__inner {
+        min-height: 2.75rem;
+        padding: 0.6875rem 2.4375rem 0.6875rem 0.6875rem;
+        font-size: 0.875rem;
+        line-height: calc(1.25rem / 0.875rem);
+      }
+
+      & .choices__list--dropdown {
+        padding-block: 0.5rem;
+
+        & .choices__item {
+          padding: 0.625rem 2.1875rem 0.625rem 0.6875rem;
+          font-size: 0.875rem;
+          line-height: calc(1.25rem / 0.875rem);
+        }
+      }
+    }
+
+    &::after {
+      right: 1rem;
+      top: 50%;
+      border: none;
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-top: 0;
+      background-image: url('./../images/icon-right-arrow.svg');
+      background-size: 12px 12px;
+      transform: translateY(-50%) rotate(90deg);
+      transform-origin: center;
+      transition: transform 300ms ease-in-out;
+    }
+
+    &.is-open {
+      &::after {
+        margin-top: 0;
+        border-color: transparent;
+        transform: translateY(-50%) rotate(-90deg);
+      }
+    }
+
+    .choices__inner {
+      padding-bottom: 0.9375rem;
+    }
+  }
+
+  &__inner {
+    border-color: var(--third-color);
+    background-color: var(--white-color);
+    border-radius: 12px;
+    padding: 0.9375rem 2.6875rem 0.9375rem 0.9375rem;
+    min-height: 3.375rem;
+    font-size: 1rem;
+    color: var(--fourth-color);
+    line-height: calc(1.375rem / 1rem);
+    box-sizing: border-box;
+    transition-property: box-shadow, border-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+
+    .is-focused &,
+    .is-open &,
+    &:hover {
+      border-color: var(--primary-light-color);
+      box-shadow: 0 10px 30px var(--secondary-color-10);
+    }
+
+    .is-flipped.is-open &,
+    .is-open & {
+      border-radius: 12px;
+    }
+  }
+
+  &__list {
+    &--dropdown {
+      box-sizing: border-box;
+      border-radius: 12px;
+      top: calc(100% + 0.25rem);
+      padding-block: 0.75rem;
+
+      .is-flipped & {
+        bottom: calc(100% + 0.25rem);
+        margin-bottom: 0;
+        border-radius: 12px;
+      }
+
+      .is-open & {
+        border-color: var(--third-color);
+        box-shadow: 0 10px 30px var(--secondary-color-10);
+      }
+
+      .choices__item {
+        padding: 0.625rem 2.6875rem 0.625rem 0.9375rem;
+        font-size: 1rem;
+        line-height: calc(1.375rem / 1rem);
+        background-repeat: no-repeat;
+        background-position: top 50% right 0.9375rem;
+
+        &.is-selected {
+          background-image: url('./../images/icon-jackdaw-alternate.svg');
+        }
+
+        &--selectable {
+          &.is-highlighted {
+            background-color: var(--eleventh-color);
+          }
+        }
+      }
+    }
+
+    &--single {
+      padding: 0;
+    }
+  }
+}

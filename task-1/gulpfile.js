@@ -13,6 +13,15 @@ function deleteDestinationDirectory() {
   });
 }
 
+function transferImages() {
+  return new Promise((resolve) => {
+    src('./src/images/**/*.svg')
+      .pipe(dest('./dist/images/'))
+
+    resolve();
+  });
+}
+
 function transferFontFiles() {
   return new Promise((resolve) => {
     src('./src/fonts/**/*.woff2', { encoding: false })
@@ -27,7 +36,7 @@ function transferFontFiles() {
 
 function transferJsFiles() {
   return new Promise((resolve) => {
-    src('./src/js/pages/*.js')
+    src(['./src/js/pages/*.js', './src/js/libs/*.js'])
       .pipe(dest('./dist/js/'))
       .pipe(connect.reload());
 
@@ -48,7 +57,7 @@ function transpilePug() {
 
 function transpileScss() {
   return new Promise((resolve) => {
-    src('./src/scss/pages/*.scss')
+    src(['./src/scss/pages/*.scss', './src/scss/libs/*.scss'])
       .pipe(sass())
       .pipe(dest('./dist/css/'))
       .pipe(connect.reload());
@@ -76,7 +85,8 @@ exports.dev = series(
   deleteDestinationDirectory,
   parallel(
     transferFontFiles,
-    transferJsFiles
+    transferJsFiles,
+    transferImages
   ),
   parallel(
     transpilePug,

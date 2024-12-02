@@ -1,0 +1,32 @@
+.button-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  box-shadow: 0 10px 30px var(--secondary-color-10);
+  cursor: pointer;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.button-circle:hover {
+  box-shadow: 0 10px 30px var(--secondary-color-20);
+}
+
+.button-circle--size_small {
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0 5px 20px var(--secondary-color-10);
+}
+
+.button-circle--size_small:hover {
+  box-shadow: 0 5px 20px var(--secondary-color-20);
+}
+
+.button-circle--size_small .button-circle__icon {
+  width: 12px;
+  height: 12px;
+}

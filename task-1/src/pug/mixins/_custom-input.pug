@@ -1,0 +1,9 @@
+include ./_button-close
+
+mixin custom-input(id, labelText, errorText, type='text', modifiers='')
+  div(class=`custom-input${modifiers}`)
+    label(class='custom-input__label' for=id)= labelText
+    div(class='custom-input__wrapper')
+      input(class='custom-input__field' id=id type=type)&attributes(attributes)
+      +button-close(' custom-input__button-close')
+    p(class='custom-input__error')= errorText

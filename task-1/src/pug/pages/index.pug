@@ -1,0 +1,110 @@
+include ./../mixins/_button
+include ./../mixins/_button-text
+include ./../mixins/_button-circle
+include ./../mixins/_button-icon
+include ./../mixins/_button-close
+include ./../mixins/_custom-input
+include ./../mixins/_heading
+include ./../mixins/_text
+include ./../mixins/_modal
+include ./../mixins/_dropdown
+
+doctype html
+html(class='root' lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width')
+    title Компоненты
+    link(href='./css/choices.css' rel='stylesheet')
+    link(href='./css/index.css' rel='stylesheet')
+    script(src='./js/choices.js' defer)
+    script(src='./js/index.js' defer)
+  body(class='body root__body')
+    div(class='body__wrapper')
+      +button('Заказать звонок', ' button--type_primary button--has-shadow')(data-modal-target='order-call')
+      +button('Заказать звонок', ' button--type_primary button--size_medium button--has-shadow')
+      +button('Заказать звонок', ' button--type_primary button--size_small button--has-shadow')
+      +button('Заказать звонок', ' button--type_primary')
+      +button('Заказать звонок', ' button--type_primary button--size_medium')
+      +button('Заказать звонок', ' button--type_primary button--size_small')
+    div(class='body__wrapper')
+      +button('Оставить заявку', ' button--type_secondary')(data-modal-target='leave-request')
+      +button('Оставить заявку', ' button--type_secondary button--size_medium')
+      +button('Оставить заявку', ' button--type_secondary button--size_small')
+    div(class='body__wrapper')
+      div(class='body__box')
+        +button-text('Текстовая кнопка')
+        +button-text('Текстовая кнопка', ' button-text--size_small')
+      div(class='body__box')
+        +button-text('Текстовая кнопка', ' body__button-text button-text--has-icon')
+        +button-text('Текстовая кнопка', ' body__button-text button-text--size_small button-text--has-icon')
+      div(class='body__box')
+        +button-text('Текстовая кнопка', ' body__button-text button-text--has-icon button-text--is-reversed')(target='_blank')
+        +button-text('Текстовая кнопка', ' body__button-text button-text--size_small button-text--has-icon button-text--is-reversed')(target='_blank')
+    div(class='body__wrapper')
+      +button-circle()
+      +button-circle(' button-circle--size_small')
+    div(class='body__wrapper')
+      +button-icon()
+      +button-icon(' button-icon--size_small')
+    div(class='body__wrapper')
+      +button-close()
+    div(class='body__wrapper')
+      +custom-input('input-1', 'Имя', 'Неверные данные')
+      +custom-input('input-1', 'Имя', 'Неверные данные', 'text', ' custom-input--is-invalid')
+    div(class='body__wrapper body__wrapper--direction_column')
+      +heading('h1', 'Компьютер | Заголовок очень большой', ' heading--desktop-size_extra-large')
+      +heading('h1', 'Компьютер | Заголовок большой', ' heading--desktop-size_large')
+      +heading('h1', 'Компьютер | Заголовок средний', ' heading--desktop-size_medium')
+      +heading('h1', 'Компьютер | Заголовок маленький', ' heading--desktop-size_small')
+      +heading('h1', 'Планшет | Заголовок очень большой', ' heading--tablet-size_extra-large')
+      +heading('h1', 'Планшет | Заголовок большой', ' heading--tablet-size_large')
+      +heading('h1', 'Планшет | Заголовок средний', ' heading--tablet-size_medium')
+      +heading('h1', 'Телефон | Заголовок очень большой', ' heading--mobile-size_extra-large')
+      +heading('h1', 'Телефон | Заголовок большой', ' heading--mobile-size_large')
+      +heading('h1', 'Телефон | Заголовок средний', ' heading--mobile-size_medium')
+      +heading('h1', 'Телефон | Заголовок маленький', ' heading--mobile-size_small')
+    div(class='body__wrapper body__wrapper--direction_column')
+      +text('p', ' text--size_extra-large text--weight_bold')
+        | Текст 22
+      +text('p', ' text--size_extra-large text--weight_semibold')
+        | Текст 22
+      +text('p', ' text--size_extra-large')
+        | Текст 22
+      +text('p', ' text--size_large text--weight_bold')
+        | Текст 20
+      +text('p', ' text--size_large text--weight_semibold')
+        | Текст 20
+      +text('p', ' text--size_large')
+        | Текст 20
+      +text('p', ' text--size_medium text--weight_bold')
+        | Текст 18
+      +text('p', ' text--size_medium text--weight_semibold')
+        | Текст 18
+      +text('p', ' text--size_medium')
+        | Текст 18
+      +text('p', ' text--weight_bold')
+        | Текст 16
+      +text('p', ' text--weight_semibold')
+        | Текст 16
+      +text('p', ' text--weight_medium')
+        | Текст 16
+      +text('p')
+        | Текст 16
+      +text('p', ' text--size_small text--weight_bold')
+        | Текст 14
+      +text('p', ' text--size_small text--weight_semibold')
+        | Текст 14
+      +text('p', ' text--size_small')
+        | Текст 14
+      +text('p', ' text--size_extra-small text--weight_bold')
+        | Текст 12
+      +text('p', ' text--size_extra-small text--weight_semibold')
+        | Текст 12
+      +text('p', ' text--size_extra-small')
+        | Текст 12
+    div(class='body__wrapper')
+      +dropdown('dropdown-1')
+      +dropdown('dropdown-2', ' dropdown--size_small')
+  +modal('order-call', 'Закажите звонок', ' body__modal')
+  +modal('leave-request', 'Оставьте заявку', ' body__modal')

@@ -1,0 +1,17 @@
+.button-close {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-close:hover .button-close__icon {
+  fill: var(--fourth-color);
+}
+
+.button-close__icon {
+  transition: fill 300ms ease-in-out;
+}

@@ -1,0 +1,30 @@
+@use './../mixins/connect-font' as *;
+
+@include connect-font('inter-regular', 'Inter');
+@include connect-font('inter-medium', 'Inter', 500);
+@include connect-font('inter-semibold', 'Inter', 600);
+@include connect-font('inter-bold', 'Inter', 700);
+
+.root {
+  --primary-color: hsl(155deg 67% 44%);
+  --primary-10-color: hsla(from var(--primary-color) h s l / 0.1);
+  --primary-20-color: hsla(from var(--primary-color) h s l / 0.2);
+  --primary-40-color: hsla(from var(--primary-color) h s l / 0.4);
+  --primary-light-color: hsl(158deg 100% 40%);
+  --secondary-color-10: hsla(213deg 100% 35% / 0.1);
+  --secondary-color-20: hsla(213deg 100% 35% / 0.2);
+  --third-color: hsl(218deg 34% 90%);
+  --fourth-color: hsl(219deg 19% 12%);
+  --fifth-color: hsl(219deg 19% 30%);
+  --sixth-color: hsl(0deg 100% 67%);
+  --seventh-color: hsla(from var(--fourth-color) h s l / 0.5);
+  --eighth-color: hsla(220deg 50% 98%);
+  --ninth-color: hsl(218deg 16% 57%);
+  --tenth-color: hsl(238deg 100% 65%);
+  --eleventh-color: hsla(218deg 49% 96%);
+  --white-color: hsl(0deg 0% 100%);
+
+  &__body {
+    margin: 0;
+  }
+}

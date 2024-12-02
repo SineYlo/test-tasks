@@ -1,0 +1,26 @@
+include ./_button
+include ./_button-close
+include ./_custom-input
+include ./_heading
+include ./_text
+
+mixin modal(modalId, headingText, classes = '')
+  div(class=`modal${classes}` aria-labelledby=`${modalId}-heading` aria-describedby=`${modalId}-description` aria-modal='true' aria-hidden='true' tabindex='-1' role='dialog' data-modal-id=modalId)
+    button(class='modal__overlay-button' type='button' data-modal-hide='')
+    div(class='modal__content' role='document')
+      +button-close(' modal__button-close')(data-modal-hide='')
+      div(class='modal__box')
+        +heading('h2', headingText, ' modal__heading heading--desktop-size_medium')(id=`${modalId}-heading`)
+        +text('p', ' modal__description')(id=`${modalId}-description`)
+          | Наш менеджер перезвонит вам и ответит на все Ваши вопросы.
+        form(class='modal__form' action='#')
+          ul(class='modal__custom-inputs')
+            li
+              +custom-input(`${modalId}-name`, 'Имя', 'Обязательно для заполнения')
+            li
+              +custom-input(`${modalId}-phone`, 'Телефон', 'Обязательно для заполнения', type='tel')(placeholder='+7')
+            li
+              +custom-input(`${modalId}-name`, 'Email', 'Обязательно для заполнения', type='email')
+          +button('Отправить', ' button--type_primary button--has-shadow', 'submit')
+        +text('p', ' modal__text text--size_extra-small')
+          | Оставляя заявку, вы соглашаетесь на обработку ваших персональных данных на условиях, определяемых #[a(class='modal__link' href='#' target='_blank') политикой конфиденциальности]
