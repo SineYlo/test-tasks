@@ -1,0 +1,29 @@
+.navigation-primary {
+  &__list {
+    max-width: 13.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0;
+    gap: 0.9375rem;
+    list-style-type: none;
+    margin-block: 0;
+    padding-inline-start: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: calc(1rem / 0.75rem);
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 48em) {
+    display: none;
+  }
+}

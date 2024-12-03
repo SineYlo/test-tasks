@@ -1,0 +1,6 @@
+mixin navigation(type, list, hasHighlightedItem, classes = '')
+  nav(class=`navigation-${type}${classes}` aria-label=type)
+    ul(class=`navigation-${type}__list`)
+      for item, index in list
+        li
+          a(class=`navigation-${type}__link${hasHighlightedItem && index === 0 ? ` navigation-${type}__link--is-active` : ''}` href='#') #{item}

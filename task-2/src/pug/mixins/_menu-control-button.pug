@@ -1,0 +1,6 @@
+mixin menu-control-button(menuId, text, classes = '')
+  button(class=`menu-control-button${classes}` id='menu-control-button' type='button' aria-expanded='false' aria-controls=menuId)
+    span(class='menu-control-button__icon')
+      for numberOfLine in ['first', 'second', 'third', 'fourth']
+        span(class=`menu-control-button__icon-line menu-control-button__icon-line--${numberOfLine}`)
+    span(class='menu-control-button__text') #{text}

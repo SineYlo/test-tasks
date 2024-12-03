@@ -1,0 +1,5 @@
+mixin gift-item(classes, ...sentences)
+  li(class=['gift-item', classes])
+    div(class='gift-item__content')
+      for sentence in sentences
+        p(class='gift-item__text') #{sentence}

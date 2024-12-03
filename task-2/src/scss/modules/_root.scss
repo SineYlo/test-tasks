@@ -1,0 +1,29 @@
+@use './../mixins/connect-font' as *;
+
+@include connect-font('jost-medium', 'Jost', 500);
+@include connect-font('jost-semibold', 'Jost', 600);
+@include connect-font('jost-extrabold', 'Jost', 800);
+
+.root {
+  --primary-hue: 258deg;
+  --secondary-hue: 135deg;
+
+  --first-color: hsl(var(--primary-hue) 100% 21%);
+  --second-color: hsl(var(--primary-hue) 81% 30%);
+  --third-color: hsl(var(--primary-hue) 45% 48%);
+  --fourth-color: hsl(var(--secondary-hue) 100% 40%);
+  --fifth-color: hsl(var(--secondary-hue) 100% 34%);
+  --sixth-color: hsl(216deg 100% 39%);
+  --seventh-color: hsl(0deg 0% 100%);
+  --eighth-color: hsla(0deg 0% 0% / 0.25);
+
+  --header-height: 8.5625rem;
+
+  &__body {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 48em) {
+    --header-height: 5.375rem;
+  }
+}

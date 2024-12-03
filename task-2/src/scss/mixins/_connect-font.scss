@@ -1,0 +1,16 @@
+@mixin connect-font($file-name, $font-family-name, $font-weight: false, $font-style: false) {
+  @font-face {
+    src: url('./../fonts/#{$file-name}.woff2');
+    font-family: $font-family-name;
+
+    @if $font-weight {
+      font-weight: $font-weight;
+    }
+
+    @if $font-style {
+      font-style: $font-style;
+    }
+
+    font-display: swap;
+  }
+}

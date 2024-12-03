@@ -1,0 +1,20 @@
+include ./_menu-item
+include ./_advantage-item
+include ./_gift-item
+
+mixin menu(classes)
+  div(class=['menu', classes] id='menu')
+    div(class='menu__container' id='menu-container')
+      ul(class='menu__primary-list')
+        +menu-item('Aircare', ['Cooling', 'Heating', 'Indoor air quality', 'Ducts, vents, & airflow'])
+        +menu-item('Powercare', ['Electrical', 'Whole-home generators', 'Gas plumbing'])
+        +menu-item('Hydrocare', ['Plumbing', 'Water quality', 'Water heaters', 'Sump pumps', 'Water leak detection & repairs', 'Septic', 'Sewer & drains'])
+      ul(class='menu__advantages')
+        +advantage-item('advantage-item--hotspot', 'Emergency service')
+        +advantage-item('advantage-item--list', 'Inspections & Energy audits')
+        +advantage-item('advantage-item--crown', 'Service plans')
+      ul(class='menu__gifts')
+        +gift-item('menu__gift-item gift-item--present', '$100 off', 'First-time customer')
+        +gift-item('menu__gift-item gift-item--discount', 'Get a gree flexx eco', 'As low as $76')
+        +gift-item('gift-item--alternate', '400+', '5-stars reviews')
+
